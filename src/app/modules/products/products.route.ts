@@ -11,6 +11,12 @@ router.post(
     ProductsController.createProduct,
 );
 
+router.post(
+    '/create-multiple-products',
+    validateRequest(ProductValidations.createMultipleProductsValidationSchema),
+    ProductsController.createMultipleProducts,
+);
+
 router.get('/get-all-products', ProductsController.getAllProducts);
 
 router.get(

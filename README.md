@@ -1,5 +1,9 @@
 # BH - Ecommerce Server
 
+### Live Link :
+
+    https://bh-ecommerce.vercel.app/
+
 ## Category Api
 
 -   Create Single Category `/api/category/create-category`
@@ -147,7 +151,7 @@ Request Body:
     "productCode": "123456",
     "name": "OnePlus Nord N30",
     "price": 299.99,
-    "availableUnit": 150,
+    "stock": 150,
     "description": "The OnePlus Nord N30 is a sleek and powerful smartphone offering great performance and value.",
     "image": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n30-se/nord-n30-se-01-500x500.png",
     "categories": ["Electronics", "Mobile Phones", "Smartphones"]
@@ -165,7 +169,7 @@ Response Example:
         "productCode": "123456",
         "name": "OnePlus Nord N30",
         "price": 299.99,
-        "availableUnit": 150,
+        "stock": 150,
         "description": "The OnePlus Nord N30 is a sleek and powerful smartphone offering great performance and value.",
         "image": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n30-se/nord-n30-se-01-500x500.png",
         "categories": ["Electronics", "Mobile Phones", "Smartphones"],
@@ -192,7 +196,7 @@ Response Example:
             "productCode": "123456",
             "name": "OnePlus Nord N30",
             "price": 299.99,
-            "availableUnit": 150,
+            "stock": 150,
             "description": "The OnePlus Nord N30 is a sleek and powerful smartphone offering great performance and value.",
             "image": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n30-se/nord-n30-se-01-500x500.png",
             "categories": ["Smartphones"],
@@ -219,7 +223,7 @@ Response Example:
             "productCode": "123456",
             "name": "OnePlus Nord N30",
             "price": 299.99,
-            "availableUnit": 150,
+            "stock": 150,
             "description": "The OnePlus Nord N30 is a sleek and powerful smartphone offering great performance and value.",
             "image": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n30-se/nord-n30-se-01-500x500.png",
             "categories": ["Smartphones"],

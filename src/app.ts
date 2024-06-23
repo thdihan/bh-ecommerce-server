@@ -15,6 +15,13 @@ app.use('/api', router);
 
 app.use(globalErrorHandler);
 
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Welcome to the API',
+        yourIP: req.ip,
+    });
+});
+
 app.use('*', notFound);
 
 export default app;

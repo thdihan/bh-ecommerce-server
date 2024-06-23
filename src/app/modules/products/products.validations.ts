@@ -18,7 +18,7 @@ const createProductValidationSchema = z.object({
             .positive({
                 message: 'Price must be a positive number',
             }),
-        availableUnit: z
+        stock: z
             .number({
                 required_error: 'Available unit is required',
                 invalid_type_error: 'Available unit must be a number',
@@ -36,6 +36,46 @@ const createProductValidationSchema = z.object({
         }),
         categories: z.array(z.string()),
     }),
+});
+
+const createMultipleProductsValidationSchema = z.object({
+    body: z.array(
+        z.object({
+            productCode: z.string({
+                required_error: 'Product code is required',
+                invalid_type_error: 'Product code must be a string',
+            }),
+            name: z.string({
+                required_error: 'Name is required',
+                invalid_type_error: 'Name must be a string',
+            }),
+            price: z
+                .number({
+                    required_error: 'Price is required',
+                    invalid_type_error: 'Price must be a number',
+                })
+                .positive({
+                    message: 'Price must be a positive number',
+                }),
+            stock: z
+                .number({
+                    required_error: 'Available unit is required',
+                    invalid_type_error: 'Available unit must be a number',
+                })
+                .positive({
+                    message: 'Available unit must be a positive number',
+                }),
+            description: z.string({
+                required_error: 'Description is required',
+                invalid_type_error: 'Description must be a string',
+            }),
+            image: z.string({
+                required_error: 'Image is required',
+                invalid_type_error: 'Image must be a string',
+            }),
+            categories: z.array(z.string()),
+        }),
+    ),
 });
 
 const updateProductValidationSchema = z.object({
@@ -61,7 +101,7 @@ const updateProductValidationSchema = z.object({
                 message: 'Price must be a positive number',
             })
             .optional(),
-        availableUnit: z
+        stock: z
             .number({
                 required_error: 'Available unit is required',
                 invalid_type_error: 'Available unit must be a number',
@@ -88,5 +128,6 @@ const updateProductValidationSchema = z.object({
 
 export const ProductValidations = {
     createProductValidationSchema,
+    createMultipleProductsValidationSchema,
     updateProductValidationSchema,
 };

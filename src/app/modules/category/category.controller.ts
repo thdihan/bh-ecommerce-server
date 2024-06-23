@@ -42,11 +42,16 @@ const createManyCategories = catchAsync(async (req, res) => {
 const getAllCategories = catchAsync(async (req, res) => {
     const result = await CategoryService.getAllCategoriesFromDB();
 
+    const data = {
+        count: result.length,
+        categories: result,
+    };
+
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
         message: 'Categories fetched successfully',
-        data: result,
+        data: data,
     });
 });
 

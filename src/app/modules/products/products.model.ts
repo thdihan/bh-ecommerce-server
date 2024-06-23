@@ -16,7 +16,7 @@ const productSchema = new Schema<TProduct>(
             type: Number,
             required: true,
         },
-        availableUnit: {
+        stock: {
             type: Number,
             required: true,
             default: 0,
