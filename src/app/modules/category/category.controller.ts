@@ -38,7 +38,33 @@ const createManyCategories = catchAsync(async (req, res) => {
         data: result,
     });
 });
+
+const getAllCategories = catchAsync(async (req, res) => {
+    const result = await CategoryService.getAllCategoriesFromDB();
+
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Categories fetched successfully',
+        data: result,
+    });
+});
+
+const getCategoryByName = catchAsync(async (req, res) => {
+    const name = textProcessing(req.params.name);
+
+    const result = await CategoryService.getCategoryByNameFromDB(name);
+
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Category fetched successfully',
+        data: result,
+    });
+});
 export const CategoryController = {
     createCategory,
     createManyCategories,
+    getAllCategories,
+    getCategoryByName,
 };
