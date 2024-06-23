@@ -39,4 +39,24 @@ const productSchema = new Schema<TProduct>(
     },
 );
 
+// const checkCategories = (categories: string[]) => {
+//     categories.forEach(async (category: string) => {
+//         const result = await CategoryService.getCategoryByNameFromDB(category);
+//         if (!result) {
+//             throw new AppError(
+//                 httpStatus.NOT_FOUND,
+//                 `${category} not found in the DB`,
+//             );
+//         }
+//     });
+// };
+// productSchema.pre('save', async function (next) {
+//     const categories = this.categories;
+
+//     await checkCategories(categories);
+
+//     console.log('WORKED');
+//     next();
+// });
+
 export const ProductModel = model<TProduct>('Product', productSchema);

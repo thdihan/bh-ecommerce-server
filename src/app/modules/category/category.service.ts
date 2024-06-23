@@ -17,7 +17,7 @@ const getAllCategoriesFromDB = async () => {
 };
 
 const getCategoryByNameFromDB = async (name: string) => {
-    const result = await CategoryModel.find({ name });
+    const result = await CategoryModel.findOne({ name });
     return result;
 };
 

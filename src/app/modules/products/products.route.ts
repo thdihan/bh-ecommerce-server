@@ -11,4 +11,11 @@ router.post(
     ProductsController.createProduct,
 );
 
+router.get('/get-all-products', ProductsController.getAllProducts);
+
+router.get(
+    '/get-product-by-product-code/:productCode',
+    ProductsController.getProductByProductCode,
+);
+
 export const ProductRoutes = router;

@@ -176,3 +176,57 @@ Response Example:
     }
 }
 ```
+
+-   Get All Product `/api/products/get-all-products`
+
+Response Example:
+
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "All products fetched successfully",
+    "data": [
+        {
+            "_id": "66784e7d1f7ba1acc52df5b2",
+            "productCode": "123456",
+            "name": "OnePlus Nord N30",
+            "price": 299.99,
+            "availableUnit": 150,
+            "description": "The OnePlus Nord N30 is a sleek and powerful smartphone offering great performance and value.",
+            "image": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n30-se/nord-n30-se-01-500x500.png",
+            "categories": ["Smartphones"],
+            "createdAt": "2024-06-23T16:34:05.063Z",
+            "updatedAt": "2024-06-23T16:34:05.063Z",
+            "__v": 0
+        }
+    ]
+}
+```
+
+-   Get Product By ID `/api/products/get-product-by-product-code/123456`
+
+Response Example:
+
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "Product fetched successfully",
+    "data": [
+        {
+            "_id": "66784e7d1f7ba1acc52df5b2",
+            "productCode": "123456",
+            "name": "OnePlus Nord N30",
+            "price": 299.99,
+            "availableUnit": 150,
+            "description": "The OnePlus Nord N30 is a sleek and powerful smartphone offering great performance and value.",
+            "image": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n30-se/nord-n30-se-01-500x500.png",
+            "categories": ["Smartphones"],
+            "createdAt": "2024-06-23T16:34:05.063Z",
+            "updatedAt": "2024-06-23T16:34:05.063Z",
+            "__v": 0
+        }
+    ]
+}
+```
