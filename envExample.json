@@ -1,0 +1,5 @@
+// NODE_ENV = development
+// PORT = 5001
+// DATABASE_URL = mongodb://localhost:27017/ph-university
+// BBCRYPT_SALT_ROUNDS = 12
+// DEFAULT_PASS=ABCDEFGH@#

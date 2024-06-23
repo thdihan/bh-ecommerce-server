@@ -1,0 +1,34 @@
+studentData = {
+  id: "2023-ST-0001",
+  user: "ObjectId(""someUserIdHere"")", // Replace with actual ObjectId
+  password: "hashedPassword", // This would be hashed before saving
+  name: {
+    firstName: "John",
+    middleName: "David",
+    lastName: "Doe",
+  },
+  gender: "male",
+  dateOfBirth: "1998-01-01",
+  email: "johndoe@example.com",
+  contactNo: "+1234567890",
+  emergencyContactNo: "+9876543210",
+  bloogGroup: "A+",
+  presentAddress: "123 Main St, Anytown, CA",
+  permanentAddress: "456 Elm St, Anytown, CA",
+  guardian: {
+    fatherName: "William Doe",
+    fatherOccupation: "Software Engineer",
+    fatherContactNo: "+1234567891",
+    motherName: "Jane Doe",
+    motherOccupation: "Teacher",
+    motherContactNo: "+1234567892",
+  },
+  localGuardian: {
+    name: "Alice Smith",
+    occupation: "Doctor",
+    contactNo: "+9876543211",
+    address: "789 Maple St, Anytown, CA",
+  },
+  profileImg: "https://example.com/profile.jpg", // Optional profile image URL
+  isDeleted: false,
+};
