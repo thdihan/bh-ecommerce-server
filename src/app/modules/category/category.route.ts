@@ -11,4 +11,10 @@ router.post(
     CategoryController.createCategory,
 );
 
+router.post(
+    '/create-many-categories',
+    validateRequest(CategoryValidations.createManyCategoriesValidationSchema),
+    CategoryController.createManyCategories,
+);
+
 export const CategoryRoutes = router;
