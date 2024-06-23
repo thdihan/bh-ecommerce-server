@@ -1,5 +1,35 @@
 # BH - Ecommerce Server
 
+## Category Api
+
+-   Create Single Category `/api/category/create-category`
+
+Request Body:
+
+```json
+{
+    "name": "Smartphones"
+}
+```
+
+Response Example:
+
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "Category created successfully",
+    "data": {
+        "name": "Smartphones",
+        "noOfProducts": 0,
+        "_id": "66783cc6488664c06fbd2c17",
+        "createdAt": "2024-06-23T15:18:30.949Z",
+        "updatedAt": "2024-06-23T15:18:30.949Z",
+        "__v": 0
+    }
+}
+```
+
 ## Product Api
 
 -   Create Product `/api/products/create-product`
