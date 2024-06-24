@@ -3,7 +3,7 @@ import { TCart, TCartProduct } from './cart.interface';
 
 const cartProductSchema = new Schema<TCartProduct>(
     {
-        productId: {
+        product: {
             type: Schema.Types.ObjectId,
             ref: 'Product',
             required: true,

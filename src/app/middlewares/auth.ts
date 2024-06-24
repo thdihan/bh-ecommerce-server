@@ -20,7 +20,7 @@ const auth = () => {
                     'You have no access to this route',
                 );
             }
-            const token = tokenWithBearer.split(' ')[1];
+            const token = tokenWithBearer;
             // checking if the given token is valid
             const decoded = jwt.verify(
                 token,

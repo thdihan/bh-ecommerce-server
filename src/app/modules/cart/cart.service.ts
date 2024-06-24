@@ -12,7 +12,7 @@ const createCartIntoDB = async (cart: TCart) => {
 
 const addProductToCart = async (
     userId: Types.ObjectId,
-    productId: Types.ObjectId,
+    product: Types.ObjectId,
 ) => {
     // Getting cart information from the database
     const cart = await CartModel.findOne({
@@ -23,30 +23,30 @@ const addProductToCart = async (
     if (!cart) {
         const newCart = await createCartIntoDB({
             userId,
-            products: [{ productId }],
+            products: [{ product }],
         });
         return newCart;
     }
 
     // checking if the product is already in the cart
-    const product = cart.products.find(
-        (product) => product.productId.toString() == productId.toString(),
+    const productExist = cart.products.find(
+        (product) => product.product.toString() == product.toString(),
     );
 
     // If the product is already in the cart, return the cart
-    if (product) {
+    if (productExist) {
         console.log('Product already in the cart', product);
         return cart;
     }
 
     // Check valid product
-    const validProduct = await ProductModel.findById(productId);
+    const validProduct = await ProductModel.findById(product);
     if (!validProduct) {
         throw new AppError(httpStatus.NOT_FOUND, 'Invalid product');
     }
 
     // add the product to the cart
-    cart.products.push({ productId });
+    cart.products.push({ product });
     await cart.save();
     return cart;
 };
@@ -62,8 +62,16 @@ const addMultipleProductsToCart = async (
     return result;
 };
 
+const getCartByUserId = async (userId: string) => {
+    const cart = await CartModel.findOne({ userId }).populate(
+        'products.product',
+    );
+    return cart;
+};
+
 export const CartServices = {
     createCartIntoDB,
     addProductToCart,
     addMultipleProductsToCart,
+    getCartByUserId,
 };

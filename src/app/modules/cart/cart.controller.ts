@@ -32,7 +32,21 @@ const addMultipleProductsToCart = catchAsync(async (req, res) => {
     });
 });
 
+const getCartByUserId = catchAsync(async (req, res) => {
+    const { userId } = req.params;
+
+    const result = await CartServices.getCartByUserId(userId);
+
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Cart information',
+        data: result,
+    });
+});
+
 export const CartController = {
     addProductToCart,
     addMultipleProductsToCart,
+    getCartByUserId,
 };
