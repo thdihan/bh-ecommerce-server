@@ -27,7 +27,7 @@ const auth = () => {
                 config.jwt_access_secret as string,
             ) as JwtPayload;
 
-            const { role, email, iat } = decoded;
+            const { email, iat } = decoded;
 
             // checking if the user is exist
             const user = await User.isUserExistsByEmail(email);
