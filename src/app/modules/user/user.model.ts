@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { TUser } from './user.interface';
+import { TUser, UserModel } from './user.interface';
 import config from '../../config';
 import bcrypt from 'bcrypt';
 
@@ -51,4 +51,24 @@ userSchema.post('save', function (doc, next) {
     next();
 });
 
-export const UserModel = model('User', userSchema);
+userSchema.statics.isUserExistsByEmail = async function (email: string) {
+    return await User.findOne({ email }).select('+password');
+};
+
+userSchema.statics.isPasswordMatched = async function (
+    plainTextPassword,
+    hashedPassword,
+) {
+    return await bcrypt.compare(plainTextPassword, hashedPassword);
+};
+
+userSchema.statics.isJWTIssuedBeforePasswordChanged = function (
+    passwordChangedTimestamp: Date,
+    jwtIssuedTimestamp: number,
+) {
+    const passwordChangedTime =
+        new Date(passwordChangedTimestamp).getTime() / 1000;
+    return passwordChangedTime > jwtIssuedTimestamp;
+};
+
+export const User = model<TUser, UserModel>('User', userSchema);

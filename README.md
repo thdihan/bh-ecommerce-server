@@ -4,6 +4,78 @@
 
     https://bh-ecommerce.vercel.app/
 
+## Auth
+
+-   Create User
+
+Request Body:
+
+```json
+{
+    "name": "<name>",
+    "email": "<email>",
+    "contact": "<contact>",
+    "password": "<password>",
+    "address": "<address>",
+    "image": "<image link>"
+}
+```
+
+Response Example:
+
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "User created successfully",
+    "data": {
+        "name": "<name>",
+        "email": "<email>",
+        "contact": "<contact>",
+        "password": "",
+        "address": "<address>",
+        "image": "<image link>"
+        "_id": "6679829c1f1b6b58beaf1dd4",
+        "createdAt": "2024-06-24T14:28:44.189Z",
+        "updatedAt": "2024-06-24T14:28:44.189Z",
+        "__v": 0
+    }
+}
+```
+
+-   Login
+
+Request Body:
+
+```json
+{
+    "email": "<email address>",
+    "password": "<password>"
+}
+```
+
+Response Example:
+
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "User logged in successfully",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRhbnZpcmhvc3NhaW4yMEBpdXQtZGhha2EuZWR1IiwiaWF0IjoxNzE5MjQwMTU0LCJleHAiOjE3MjAxMDQxNTR9.njxKFBzTlSju3Aex1mtR5wf0gkoHFReamrQJtmdJrNs",
+    "data": {
+        "_id": "6679829c1f1b6b58beaf1dd4",
+        "name": "Tanvir Hossain Dihan",
+        "email": "tanvirhossain20@iut-dhaka.edu",
+        "contact": "01714289841",
+        "address": "Board Bazar, Gazipur",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGYf19I0Y3WvSTzPO_U9OAaAqoaw7YdyT3Zw&s",
+        "createdAt": "2024-06-24T14:28:44.189Z",
+        "updatedAt": "2024-06-24T14:28:44.189Z",
+        "__v": 0
+    }
+}
+```
+
 ## Category Api
 
 -   Create Single Category `/api/category/create-category`
