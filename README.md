@@ -6,7 +6,7 @@
 
 ## Auth
 
--   Create User
+-   Create User `/api/user/signup`
 
 Request Body:
 
@@ -43,7 +43,7 @@ Response Example:
 }
 ```
 
--   Login
+-   Login `/api/auth/login`
 
 Request Body:
 
@@ -169,24 +169,19 @@ Response Example:
     "success": true,
     "statusCode": 200,
     "message": "Categories fetched successfully",
-    "data": [
-        {
-            "_id": "66783eb934f3171aaa178791",
-            "name": "Smartphones",
-            "noOfProducts": 0,
-            "__v": 0,
-            "createdAt": "2024-06-23T15:26:49.578Z",
-            "updatedAt": "2024-06-23T15:26:49.578Z"
-        },
-        {
-            "_id": "66783eb934f3171aaa178792",
-            "name": "Laptops",
-            "noOfProducts": 0,
-            "__v": 0,
-            "createdAt": "2024-06-23T15:26:49.578Z",
-            "updatedAt": "2024-06-23T15:26:49.578Z"
-        }
-    ]
+    "data": {
+        "count": 21,
+        "categories": [
+            {
+                "_id": "66785f9911f80b7d53141e80",
+                "name": "Smartphones",
+                "noOfProducts": 0,
+                "__v": 0,
+                "createdAt": "2024-06-23T17:47:05.613Z",
+                "updatedAt": "2024-06-23T17:47:05.613Z"
+            }
+        ]
+    }
 }
 ```
 
@@ -262,21 +257,24 @@ Response Example:
     "success": true,
     "statusCode": 200,
     "message": "All products fetched successfully",
-    "data": [
-        {
-            "_id": "66784e7d1f7ba1acc52df5b2",
-            "productCode": "123456",
-            "name": "OnePlus Nord N30",
-            "price": 299.99,
-            "stock": 150,
-            "description": "The OnePlus Nord N30 is a sleek and powerful smartphone offering great performance and value.",
-            "image": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n30-se/nord-n30-se-01-500x500.png",
-            "categories": ["Smartphones"],
-            "createdAt": "2024-06-23T16:34:05.063Z",
-            "updatedAt": "2024-06-23T16:34:05.063Z",
-            "__v": 0
-        }
-    ]
+    "data": {
+        "count": 29,
+        "products": [
+            {
+                "_id": "66785ff211f80b7d53141ef0",
+                "productCode": "123456",
+                "name": "OnePlus Nord N30 SE 5G Smartphone (4/128GB)",
+                "price": 299.99,
+                "stock": 150,
+                "description": "High performance and durability",
+                "image": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n30-se/nord-n30-se-01-200x200.png",
+                "categories": ["Smartphones"],
+                "__v": 0,
+                "createdAt": "2024-06-23T17:48:34.160Z",
+                "updatedAt": "2024-06-23T17:48:34.160Z"
+            }
+        ]
+    }
 }
 ```
 
