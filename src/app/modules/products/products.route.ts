@@ -24,4 +24,8 @@ router.get(
     ProductsController.getProductByProductCode,
 );
 
+router.get(
+    '/get-products-by-category',
+    ProductsController.getProductsByCategory,
+);
 export const ProductRoutes = router;

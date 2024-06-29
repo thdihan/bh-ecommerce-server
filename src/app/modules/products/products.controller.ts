@@ -94,9 +94,24 @@ const getProductByProductCode = catchAsync(async (req, res) => {
     });
 });
 
+const getProductsByCategory = catchAsync(async (req, res) => {
+    const { category } = req.query;
+    const result = await ProductService.getProductsByCategoryFromDB(
+        category as string,
+    );
+
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Products fetched successfully',
+        data: result,
+    });
+});
+
 export const ProductsController = {
     createProduct,
     getAllProducts,
     getProductByProductCode,
     createMultipleProducts,
+    getProductsByCategory,
 };

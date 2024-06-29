@@ -22,7 +22,7 @@ const getProductByProductCodeFromDB = async (productCode: string) => {
 };
 
 const getProductsByCategoryFromDB = async (category: string) => {
-    const result = await ProductModel.find({ categories: category });
+    const result = await ProductModel.find({ categories: { $in: [category] } });
     return result;
 };
 
